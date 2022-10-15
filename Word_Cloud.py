@@ -30,7 +30,9 @@ for val in df.OriginalTweet:
     for sub_tokens in tokens:
         if "https://t.co/" in sub_tokens:
             tokens.remove(sub_tokens)
-        if "stock" in sub_tokens:
+        if "Coronavirus" in sub_tokens:
+            tokens.remove(sub_tokens)
+        if "COVID" in sub_tokens:
             tokens.remove(sub_tokens)
     # Converts each token into lowercase
     for i in range(len(tokens)):
