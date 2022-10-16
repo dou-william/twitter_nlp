@@ -46,8 +46,8 @@ def main():
     print(df_2)
 
     # Output data
-    df.to_csv('Test_Data.csv')
-    df_2.to_csv('Test_Data_2.csv')
+    df.to_csv('Twitter_info.csv')
+    df_2.to_csv('Twitter_info_2.csv')
 
 # Run
 if __name__ == "__main__":

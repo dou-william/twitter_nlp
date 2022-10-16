@@ -4,7 +4,7 @@ from os import path
 from PIL import Image
 from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
 import matplotlib.pyplot as plt
-df = pd.read_csv("testdata/Corona_NLP_test.csv", index_col=0)
+df = pd.read_csv("testdata/Twitter_info_2.csv", index_col=0)
 counter = 0
 for index, data in df.iterrows():
     if counter == 5:
@@ -19,8 +19,10 @@ for index, data in df.iterrows():
 comment_words = ''
 stopwords = set(STOPWORDS)
 
+
+
 # iterate through the csv file
-for val in df.OriginalTweet:
+for val in df.Tweet:
 
     # typecast each val to string
     val = str(val)
@@ -30,10 +32,11 @@ for val in df.OriginalTweet:
     for sub_tokens in tokens:
         if "https://t.co/" in sub_tokens:
             tokens.remove(sub_tokens)
-        if "Coronavirus" in sub_tokens:
+        if "coronavirus" in sub_tokens:
             tokens.remove(sub_tokens)
-        if "COVID" in sub_tokens:
+        if "covid_19" in sub_tokens:
             tokens.remove(sub_tokens)
+
     # Converts each token into lowercase
     for i in range(len(tokens)):
         tokens[i] = tokens[i].lower()
